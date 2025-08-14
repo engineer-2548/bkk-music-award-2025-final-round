@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkok Music Awards 2025 - รอบ Final</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Kanit', sans-serif; }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 128, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 0, 128, 0.8); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes disco {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes bounce-in {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: disco 15s ease infinite;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080;
+        }
+        
+        .glow-button {
+            animation: pulse-glow 2s infinite;
+            transition: all 0.3s;
+        }
+        
+        .glow-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 50px rgba(255, 0, 128, 1);
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .bounce-animation {
+            animation: bounce-in 0.8s ease-out;
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 3s linear infinite;
+        }
+        
+        @keyframes sparkle {
+            0% { opacity: 0; transform: translateY(0) scale(0); }
+            50% { opacity: 1; transform: translateY(-100px) scale(1); }
+            100% { opacity: 0; transform: translateY(-200px) scale(0); }
+        }
+        
+        .music-note {
+            position: absolute;
+            font-size: 2rem;
+            animation: float-up 8s infinite;
+            opacity: 0.6;
+        }
+        
+        @keyframes float-up {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .dark-mode {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .light-mode {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen relative overflow-x-hidden">
+    <!-- Floating Music Notes -->
+    <div class="music-note" style="left: 10%; animation-delay: 0s;">🎵</div>
+    <div class="music-note" style="left: 30%; animation-delay: 2s;">🎶</div>
+    <div class="music-note" style="left: 50%; animation-delay: 4s;">🎸</div>
+    <div class="music-note" style="left: 70%; animation-delay: 6s;">🎤</div>
+    <div class="music-note" style="left: 90%; animation-delay: 8s;">🎼</div>
+    
+    <!-- Sparkles -->
+    <div id="sparkles"></div>
+    
+    <!-- Toggle Theme Button -->
+    <button id="themeToggle" class="fixed top-4 right-4 z-50 bg-white/20 backdrop-blur-md p-3 rounded-full hover:bg-white/30 transition-all duration-300">
+        <span id="themeIcon">🌙</span>
+    </button>
+    
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Header -->
+        <header class="text-center mb-8 bounce-animation">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white neon-text mb-4">
+                🔥 BANGKOK MUSIC AWARDS 2025 🔥
+            </h1>
+            <p class="text-xl md:text-2xl text-white/90 font-semibold">
+                ระเบิดความมันส์รอบ FINAL! 
+            </p>
+        </header>
+        
+        <!-- Hero Image -->
+        <div class="max-w-4xl mx-auto mb-12 float-animation">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl glow-button">
+                <img src="https://lh5.googleusercontent.com/d/1OXSAJXZa_-Fqls5cohcPb6fHPNrvDcgG" 
+                     alt="Bangkok Music Awards 2025" 
+                     class="w-full h-auto object-cover"
+                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\' viewBox=\'0 0 800 400\'%3E%3Crect fill=\'%23ff0080\' width=\'800\' height=\'400\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'48\' fill=\'white\' font-weight=\'bold\'%3EBANGKOK MUSIC AWARDS 2025%3C/text%3E%3C/svg%3E'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+        </div>
+        
+        <!-- Event Cards -->
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+            <!-- T Dance Card -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 bounce-animation" style="animation-delay: 0.2s;">
+                <div class="text-center">
+                    <span class="text-4xl mb-4 block">🕺🏻💃🏼</span>
+                    <h3 class="text-2xl font-bold text-white mb-2">ประกวดเต้น T Dance</h3>
+                    <p class="text-xl text-yellow-300 font-semibold mb-2">16 สิงหาคม 2568</p>
+                    <p class="text-white/90">เริ่มเวลา 13:00 น.</p>
+                </div>
+            </div>
+            
+            <!-- Band Contest Card -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105 bounce-animation" style="animation-delay: 0.4s;">
+                <div class="text-center">
+                    <span class="text-4xl mb-4 block">🎸🎤</span>
+                    <h3 class="text-2xl font-bold text-white mb-2">ประกวดวงดนตรีสากล</h3>
+                    <p class="text-xl text-yellow-300 font-semibold mb-2">17 สิงหาคม 2568</p>
+                    <p class="text-white/90">เริ่มเวลา 13:00 น.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Venue Info -->
+        <div class="max-w-2xl mx-auto mb-12 text-center bounce-animation" style="animation-delay: 0.6s;">
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8">
+                <h2 class="text-3xl font-bold text-white mb-4">📍 สถานที่จัดงาน</h2>
+                <p class="text-xl text-white mb-2">SPHERE HALL, 5FL., EMSPHERE</p>
+                <a href="https://maps.app.goo.gl/2JRWCUQL8f1S2SZh6" 
+                   target="_blank"
+                   class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-110 mt-4">
+                    <span>🗺️</span> ดูแผนที่
+                </a>
+            </div>
+        </div>
+        
+        <!-- Free Entry Banner -->
+        <div class="text-center mb-12 bounce-animation" style="animation-delay: 0.8s;">
+            <div class="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 px-8 py-4 rounded-full">
+                <p class="text-3xl font-black text-white">🎉 เข้าชมฟรี! 🎉</p>
+            </div>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="text-center mb-12">
+            <a href="https://ticket.eventpass.co/event-detail/bangkok-music-awards-2025" 
+               target="_blank"
+               class="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white px-12 py-6 rounded-full text-xl font-bold glow-button hover:from-pink-600 hover:to-purple-700 transition-all duration-300">
+                📲 ลงทะเบียนจองที่นั่งด่วน!
+            </a>
+        </div>
+        
+        <!-- Footer Message -->
+        <div class="text-center bounce-animation" style="animation-delay: 1s;">
+            <p class="text-2xl text-white font-bold mb-4">
+                🧨 ลุ้นกันสดๆ ทีม/วงไหนจะคว้าแชมป์ 🤘🏼
+            </p>
+            <p class="text-xl text-white/90">
+                มาร่วมเชียร์ไปด้วยกัน!
+            </p>
+        </div>
+        
+        <!-- Hashtags -->
+        <div class="text-center mt-8 flex flex-wrap justify-center gap-2">
+            <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-white">#BangkokMusicAwards</span>
+            <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-white">#BangkokMusicAwards2025</span>
+            <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-white">#ประกวดวงดนตรี</span>
+            <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-white">#ประกวดเต้นTDance</span>
+            <span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-white">#เวทีของคนมีของ</span>
+        </div>
+    </div>
+    
+    <script>
+        // Create sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 3 + 's';
+            sparkle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            document.getElementById('sparkles').appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 6000);
+        }
+        
+        setInterval(createSparkle, 300);
+        
+        // Theme toggle
+        let isDark = true;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            isDark = !isDark;
+            if (isDark) {
+                body.className = 'gradient-bg min-h-screen relative overflow-x-hidden';
+                themeIcon.textContent = '🌙';
+            } else {
+                body.className = 'light-mode min-h-screen relative overflow-x-hidden';
+                themeIcon.textContent = '☀️';
+            }
+        });
+        
+        // Add hover effect to cards
+        const cards = document.querySelectorAll('.hover\\:scale-105');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) rotate(1deg)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+        
+        // Countdown Timer (Optional)
+        function updateCountdown() {
+            const eventDate = new Date('2025-08-16T13:00:00+07:00');
+            const now = new Date();
+            const diff = eventDate - now;
+            
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                
+                const countdownEl = document.getElementById('countdown');
+                if (countdownEl) {
+                    countdownEl.textContent = `${days} วัน ${hours} ชั่วโมง ${minutes} นาที`;
+                }
+            }
+        }
+        
+        // Update countdown every minute
+        setInterval(updateCountdown, 60000);
+        updateCountdown();
+        
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const musicNotes = document.querySelectorAll('.music-note');
+            musicNotes.forEach((note, index) => {
+                const speed = 0.5 + (index * 0.1);
+                note.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+        
+        // Add pulse effect on load
+        window.addEventListener('load', () => {
+            const elements = document.querySelectorAll('.bounce-animation');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'scale(1)';
+                        el.style.transition = 'all 0.5s ease-out';
+                    }, 100);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
